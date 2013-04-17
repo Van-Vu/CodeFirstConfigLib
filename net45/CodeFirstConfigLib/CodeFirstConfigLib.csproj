@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61244B41-93D2-4441-8A4A-812837D233E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeFirstConfigLib</RootNamespace>
+    <AssemblyName>CodeFirstConfigLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Convention\DrivingLicense.cs" />
+    <Compile Include="Convention\Order.cs" />
+    <Compile Include="Convention\Product.cs" />
+    <Compile Include="Convention\User.cs" />
+    <Compile Include="DataAnnotation\DAContact.cs" />
+    <Compile Include="DataAnnotation\DAProductInStock.cs" />
+    <Compile Include="DataAnnotation\DAProductOutOfStock.cs" />
+    <Compile Include="DataAnnotation\DAReservation.cs" />
+    <Compile Include="DataAnnotation\DANationality.cs" />
+    <Compile Include="Fluent\FatEntityForMultiTables.cs" />
+    <Compile Include="Fluent\FluentCategory.cs" />
+    <Compile Include="Fluent\FluentContact.cs" />
+    <Compile Include="Fluent\FluentDrivingLicense.cs" />
+    <Compile Include="Convention\Infrastructure\Context.cs" />
+    <Compile Include="Fluent\FluentNationality.cs" />
+    <Compile Include="Fluent\FluentOrder.cs" />
+    <Compile Include="Fluent\FluentProduct.cs" />
+    <Compile Include="Fluent\FluentProductInStock.cs" />
+    <Compile Include="Fluent\FluentProductOutOfStock.cs" />
+    <Compile Include="Fluent\FluentReservation.cs" />
+    <Compile Include="Fluent\FluentUser.cs" />
+    <Compile Include="DataAnnotation\CustomAttribute\DateTimeAttribute.cs" />
+    <Compile Include="DataAnnotation\DADrivingLicense.cs" />
+    <Compile Include="DataAnnotation\DACategory.cs" />
+    <Compile Include="DataAnnotation\Infrastructure\DataAnnotationContext.cs" />
+    <Compile Include="DataAnnotation\DAOrder.cs" />
+    <Compile Include="DataAnnotation\DAProduct.cs" />
+    <Compile Include="DataAnnotation\DAUser.cs" />
+    <Compile Include="Fluent\Infrastructure\FluentContext.cs" />
+    <Compile Include="Fluent\Mapping\CategoryMapping.cs" />
+    <Compile Include="Fluent\Mapping\ContactMapping.cs" />
+    <Compile Include="Fluent\Mapping\DrivingLicenseMapping.cs" />
+    <Compile Include="Fluent\Mapping\EntityTypeConfigurationBase.cs" />
+    <Compile Include="Fluent\Mapping\FatEntityForMultiTablesMapping.cs" />
+    <Compile Include="Fluent\Mapping\NationalityMapping.cs" />
+    <Compile Include="Fluent\Mapping\OrderMapping.cs" />
+    <Compile Include="Fluent\Mapping\ProductInStockMapping.cs" />
+    <Compile Include="Fluent\Mapping\ProductMapping.cs" />
+    <Compile Include="Fluent\Mapping\ProductOutOfStockMapping.cs" />
+    <Compile Include="Fluent\Mapping\ReservationMapping.cs" />
+    <Compile Include="Fluent\Mapping\UserMapping.cs" />
+    <Compile Include="Fluent\ProductTypeEnum.cs" />
+    <Compile Include="ObjectCopier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
