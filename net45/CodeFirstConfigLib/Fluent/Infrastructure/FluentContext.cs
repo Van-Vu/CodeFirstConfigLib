@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using CodeFirstConfigLib.Fluent.Mapping;
@@ -20,6 +21,12 @@ namespace CodeFirstConfigLib.Fluent.Infrastructure
         public DbSet<FluentReservation> Reservations { get; set; }
         public DbSet<FluentUser> Users { get; set; }
         public DbSet<FatEntityForMultiTables> FatEntityForMultiTables { get; set; }
+
+        //public FluentContext()
+        //{}
+
+        protected FluentContext(DbContextFactory dbContext)
+        {}
 
         public FluentContext(string connString):base(connString)
         {

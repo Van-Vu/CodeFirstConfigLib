@@ -23,9 +23,11 @@ namespace CodeFirstConfigLib.Fluent
         // [InverseProperty("SecondaryContactForUsers")]
         public FluentContact SecondaryContact { get; set; }
 
-
         public ICollection<FluentReservation> Reservations { get; set; }
 
         public DateTime UpdatedDate { get; set; }
+
+        public string NewProperty { get; set; }
+
     }
 }

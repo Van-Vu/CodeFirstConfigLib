@@ -2,13 +2,10 @@
 MemberwiseClone: for cloning
 TPH, TPT,TPC
 Independence association: Nav property without Id
-Enum support: doesn't support in 4.4 (must be 5)
+Remove all convention: after removing, can't detect [Key]
 
 TODO:
-	Migration
-	Model caching for multiple databases
 	UnitTest Insert/Update/Delete for Table Splitting
-	Remove all convention: after removing, can't detect [Key]
 	Unit test for ConcurrencyCheck & TimeStamp: http://geekswithblogs.net/michelotti/archive/2010/10/11/testing-ef4-code-first-optimistic-concurrency-with-fluent-assertions.aspx
 	
 
@@ -59,3 +56,10 @@ Fluent Api:
 	Can't use TPH and TPT same time: Product-ProductInStock-ProductOutOfStock. 
 		REASON: Product-ProductInStock creates a new column Discriminator which is NOT NULL
 				with ProductOutOfStock (TPT), when we add new record, it inserts to Product table first to get ProductId but WITHOUT Discriminator value --> violation
+	Enum support: doesn't support in 4.4 (must be 5)
+
+Database Migration:
+	Enable-Migrations
+	Add-Migration
+	Update-Database
+	How to run "Update-Database -Script" in c# code --> save the result script to .sql file: wait for this feature http://entityframework.codeplex.com/workitem/251

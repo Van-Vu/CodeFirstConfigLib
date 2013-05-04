@@ -40,8 +40,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +81,7 @@
     <Compile Include="DataAnnotation\DAOrder.cs" />
     <Compile Include="DataAnnotation\DAProduct.cs" />
     <Compile Include="DataAnnotation\DAUser.cs" />
+    <Compile Include="Fluent\Infrastructure\DbContextFactory.cs" />
     <Compile Include="Fluent\Infrastructure\FluentContext.cs" />
     <Compile Include="Fluent\Mapping\CategoryMapping.cs" />
     <Compile Include="Fluent\Mapping\ContactMapping.cs" />
@@ -91,16 +96,32 @@
     <Compile Include="Fluent\Mapping\ReservationMapping.cs" />
     <Compile Include="Fluent\Mapping\UserMapping.cs" />
     <Compile Include="Fluent\ProductTypeEnum.cs" />
+    <Compile Include="Migrations\201304271312479_test.cs" />
+    <Compile Include="Migrations\201304271312479_test.Designer.cs">
+      <DependentUpon>201304271312479_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304280238547_InitialMigration.cs" />
+    <Compile Include="Migrations\201304280238547_InitialMigration.Designer.cs">
+      <DependentUpon>201304280238547_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ObjectCopier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201304271312479_test.resx">
+      <DependentUpon>201304271312479_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304280238547_InitialMigration.resx">
+      <DependentUpon>201304280238547_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
